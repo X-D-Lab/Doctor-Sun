@@ -5,7 +5,7 @@
 
 ```
 
-@misc{Doctor-Sun, 
+@misc{2024Doctor-Sun, 
   author={Ziyao Shao, Xin Yan, Dong Xue*}, 
   title = {Doctor Sun: A Bilingual Multimodal Large Language Model for Biomedical AI}, 
   year = {2024}, 
