@@ -6,7 +6,7 @@
 ```
 
 @misc{2024Doctor-Sun, 
-  author={Ziyao Shao, Xin Yan, Dong Xue*}, 
+  author={Dong Xue*, Ziyao Shao, Zhaoyang Duan, Fangzhou Liu, Xin Yan, Bing Li, and Zhongheng Zhang*}, 
   title = {Doctor Sun: A Bilingual Multimodal Large Language Model for Biomedical AI}, 
   year = {2024}, 
   publisher = {GitHub}, 
