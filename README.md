@@ -14,7 +14,7 @@ When the paper is under review, we will release the relevant data, code, and mod
 | Model Name | weights | 
 | :----: | :----: | 
 | pretrain | [modelscope] / huggingface | 
-| finetune | [modelscope] / huggingface | 
+| finetune | [modelscope](https://www.modelscope.cn/models/Yanlan/Doctor-Sun/files) / huggingface | 
 
 
 ### List of datasets
