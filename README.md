@@ -21,10 +21,60 @@ When the paper is under review, we will release the relevant data, code, and mod
 
 | dataset | link | 
 | :----: | :----: | 
-| pretrain | [modelscope] / huggingface | 
-| finetune | [modelscope] / huggingface | 
+| pretrain | [modelscope](https://www.modelscope.cn/datasets/Yanlan/Doctor-Sun-VL) / huggingface | 
+| finetune | [modelscope](https://www.modelscope.cn/datasets/Yanlan/Doctor-Sun-VL) / huggingface | 
 
 ### How to use
+
+
+1. Clone this repository and navigate
+```bash
+git clone https://github.com/X-D-Lab/Doctor-Sun
+cd Doctor-Sun
+```
+
+2. Install Package
+```Shell
+conda create -n DoctorS python=3.10 -y
+conda activate DoctorS
+pip install --upgrade pip 
+pip install -r requirements.txt
+```
+3. Quick Start 
+
+# Pretrain
+
+```Shell
+NPROC_PER_NODE=4 xtuner train ./xtuner/xtuner/configs/llava/llama3_8b_instruct_clip_vit_large_p14_336/pretrain/llava_llama3_8b_instruct_clip_vit_large_p14_336_e1_gpu8_sharegpt4v_pretrain --deepspeed deepspeed_zero2 --seed 1024
+```
+
+# Finetune
+
+```Shell
+NPROC_PER_NODE=4 xtuner ./xtuner/xtuner/configs/llava/llama3_8b_instruct_clip_vit_large_p14_336/finetune/llava_llama3_8b_instruct_full_clip_vit_large_p14_336_lora_e1_gpu8_internvl_finetune.py --deepspeed deepspeed_zero2 --seed 1024
+
+cd ./xtuner/xtuner/configs/llava/llama3_8b_instruct_clip_vit_large_p14_336/finetune/work_dirs/llava_llama3_8b_instruct_full_clip_vit_large_p14_336_lora_e1_gpu8_internvl_finetune
+num=23226
+xtuner convert pth_to_hf llava_llama3_8b_instruct_full_clip_vit_large_p14_336_lora_e1_gpu8_internvl_finetune ./iter_${num}.pth ./iter_${num}_xtuner
+
+
+xtuner convert merge /home/models/clip-vit-large-patch14-336 ./iter_${num}_xtuner/visual_encoder_adapter ./iter_${num}_visual_encoder --is-clip
+
+
+python ./xtuner/xtuner/configs/llava/llama3_8b_instruct_clip_vit_large_p14_336/convert_xtuner_weights_to_llava.py --text_model_id ./iter_${num}_xtuner --vision_model_id ./iter_${num}_visual_encoder --projector_weight ./iter_${num}_xtuner/projector/model.safetensors --save_path ./iter_${num}_llava
+```
+The model "clip-vit-large-patch14-336" needs to be downloaded to a specific location in advance.
+
+
+4. Evaluation
+
+Refer to the file "eva.py", which is used to evaluate the QA task. With a few simple modifications, it can also be used to evaluate the VQA task.
+
+```Shell
+python eva.py
+or
+HF_ENDPOINT=https://hf-mirror.com python eva.py
+```
 
 ### 引用
 
