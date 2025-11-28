@@ -31,6 +31,7 @@ When the paper is under review, we will release the relevant data, code, and mod
 ```bash
 git clone https://github.com/X-D-Lab/Doctor-Sun
 cd Doctor-Sun
+unzip xtuner.zip
 ```
 
 2. Install Package
