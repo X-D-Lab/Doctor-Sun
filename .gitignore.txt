@@ -1,3 +1,0 @@
-echo "xtuner/" >> .gitignore 
-git add .gitignore
-git commit -m "add xtuner to .gitignore"
