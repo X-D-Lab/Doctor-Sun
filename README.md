@@ -1,4 +1,4 @@
-# Doctor-S
+# Doctor Sun: A bilingual multimodal large language model for biomedical AI A bilingual MLLM for biomedical AI
 
 ### Model Introduction
 
@@ -6,7 +6,39 @@
 
 At present, **Doctor Sun** is fine-tuned from **CLIP** and **LLaMA** of 1, 000, 000 high-quality bilingual multi-modal medical data, and more data will be collected to expand the model's capabilities and iterate on the update. The details are being worked on, so stay tuned.
 
-When the paper is under review, we will release the relevant data, code, and model.
+
+### Overview of the code and dataset
+
+
+This warehouse contains all the training and evaluation codes for Doctor Sun. 
+The "xtuner.zip" file is a training code archive.
+The folder “llava” and eva.py contain the evaluation code.
+
+
+For the dataset, please refer to (https://www.modelscope.cn/datasets/Yanlan/Doctor-Sun-VL). It includes the complete pre-training and fine-tuning datasets.
+finetune.json: Fine-tuning text file
+image_finetune.zip: Fine-tuned image compression package
+pretrain.json: Pre-trained text file 
+image_pretrain.zip: Pre-trained Image Compression Package
+
+
+### Dataset Information
+<img width="852" height="762" alt="image" src="https://github.com/user-attachments/assets/081d3689-e4e8-4bbf-b51e-67ddb414b74c" />
+
+In the dataset repository, you can find the following files:
+finetune.json: Fine-tuning text file
+image_finetune.zip: Fine-tuned image compression package
+pretrain.json: Pre-trained text file 
+image_pretrain.zip: Pre-trained Image Compression Package
+
+All the datasets can be publicly downloaded.
+
+
+
+###  ‎Code Information
+
+The "xtuner.zip" file is a training code archive.
+The folder “llava” and eva.py contain the evaluation code.
 
 
 ### List of models
