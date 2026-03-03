@@ -23,7 +23,8 @@ image_pretrain.zip: Pre-trained Image Compression Package
 
 
 ### Dataset Information
-<img width="852" height="762" alt="image" src="https://github.com/user-attachments/assets/081d3689-e4e8-4bbf-b51e-67ddb414b74c" />
+<img width="644" height="807" alt="image" src="https://github.com/user-attachments/assets/bfa31710-4c11-41e7-b59b-b392e66a2ec2" />
+
 
 In the dataset repository, you can find the following files:
 finetune.json: Fine-tuning text file
