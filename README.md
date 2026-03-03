@@ -110,6 +110,18 @@ or
 HF_ENDPOINT=https://hf-mirror.com python eva.py
 ```
 
+
+5. Acknowledgment
+
+Our training utilized the code from xtuner, and we would like to express our gratitude for this.
+@misc{2023xtuner,
+    title={XTuner: A Toolkit for Efficiently Fine-tuning LLM},
+    author={XTuner Contributors},
+    howpublished = {\url{https://github.com/InternLM/xtuner}},
+    year={2023}
+}
+
+
 ### 引用
 
 ```
